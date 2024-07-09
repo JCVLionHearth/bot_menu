@@ -1,0 +1,52 @@
+{
+    "intents": [
+        {
+            "tag": "Tengo una consulta",
+            "options": ["privacidad", "relaciones laborales"],
+            "responses": []
+        },
+        {
+            "tag": "Tengo un dilema",
+            "options": ["ética", "conflicto de interés"],
+            "responses": []
+        },
+        {
+            "tag": "Con quienes me puedo contactar",
+            "responses": ["Puedes contactarte con 📱 oficina de cumplimiento"]
+        },
+        {
+            "tag": "privacidad",
+            "options": ["protección de datos", "confidencialidad"],
+            "responses": []
+        },
+        {
+            "tag": "protección de datos",
+            "responses": ["La protección de datos es importante. Asegúrate de..."]
+        },
+        {
+            "tag": "confidencialidad",
+            "responses": ["La confidencialidad es esencial para..."]
+        },
+        {
+            "tag": "relaciones laborales",
+            "options": ["trabajo con familiares", "relaciones personales"],
+            "responses": []
+        },
+        {
+            "tag": "trabajo con familiares",
+            "responses": ["No se recomienda trabajar con familiares debido a conflictos de interés..."]
+        },
+        {
+            "tag": "relaciones personales",
+            "responses": ["Las relaciones personales en el trabajo deben manejarse con profesionalismo..."]
+        },
+        {
+            "tag": "ética",
+            "responses": ["Los dilemas éticos deben ser abordados con...mira el 📺<a href='https://www.youtube.com/watch?v=Ct2rdk_SRZ4' target='_blank'>video de Dilemas Morales</a>"]
+        },
+        {
+            "tag": "conflicto de interés",
+            "responses": ["Los conflictos de interés deben ser reportados a..."]
+        }
+    ]
+ }
