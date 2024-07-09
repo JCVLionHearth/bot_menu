@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chatbot</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="chat-container">
+<div class="chat-header">
+           Asistente de Consultas y Dilemas
+</div>
+<div id="chatbox">
+<div id="chatlog"></div>
+<div class="typing-indicator" id="typingIndicator">
+<i class="fas fa-robot"></i>
+<span>Escribiendo...</span>
+</div>
+</div>
+<input id="userInput" type="text" name="msg" placeholder="Escribe tu mensaje aquí..." autofocus>
+<button id="sendButton" onclick="sendMessage()">Enviar</button>
+<button id="downloadButton" onclick="downloadChat()">Descargar PDF</button>
+</div>
+<!-- Modal de Configuración -->
+<div id="settingsModal" class="modal">
+<div class="modal-content">
+<h2>Personaliza tu experiencia</h2>
+<label for="userName">Nombre:</label>
+<input type="text" id="userName">
+<label for="userAvatar">Selecciona un avatar:</label>
+<div id="avatarSelection">
+<i class="fas fa-user-circle avatar-option" onclick="selectAvatar('fa-user-circle')"></i>
+<i class="fas fa-user-ninja avatar-option" onclick="selectAvatar('fa-user-ninja')"></i>
+<i class="fas fa-user-astronaut avatar-option" onclick="selectAvatar('fa-user-astronaut')"></i>
+<i class="fas fa-user-tie avatar-option" onclick="selectAvatar('fa-user-tie')"></i>
+<i class="fas fa-user-secret avatar-option" onclick="selectAvatar('fa-user-secret')"></i>
+<i class="fas fa-mars avatar-option" onclick="selectAvatar('fa-mars')"></i>
+<i class="fas fa-venus avatar-option" onclick="selectAvatar('fa-venus')"></i>
+<!-- Añade más íconos de Font Awesome aquí -->
+</div>
+<button onclick="saveSettings()" id="saveSettings">Guardar</button>
+</div>
+</div>
+<script>
+    var userName = localStorage.getItem('userName') || 'User';
+    var userAvatar = 'fa-user-circle';
+    
+    function appendMessage(role, message) {
+        var messageClass = role === 'User' ? 'user-message' : 'bot-message';
+        var avatarClass = role === 'User' ? userAvatar : 'fa-robot';
+        $("#chatlog").append('<div class="' + messageClass + '"><i class="fas ' + avatarClass + '"></i> <span>' + message + '</span></div>');
+        $("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
+    }
+    function displayTypingIndicator() {
+        $("#typingIndicator").show();
+        $("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
+    }
+    function hideTypingIndicator() {
+        $("#typingIndicator").hide();
+    }
+    function sendMessage(userInput = null) {
+        if (!userInput) {
+            userInput = $("#userInput").val();
+        }
+        appendMessage('User', userInput);
+        $("#userInput").val('');
+        displayTypingIndicator();
+        setTimeout(function() {
+            $.get("/get", { msg: userInput }).done(function(data) {
+                hideTypingIndicator();
+                appendMessage('Bot', data);
+            });
+        }, 1000);  // Delay de 1 segundo para simular que el bot está escribiendo
+    }
+    function downloadChat() {
+        window.location.href = "/download";
+    }
+    function openSettings() {
+        document.getElementById('settingsModal').style.display = 'block';
+    }
+    function closeSettings() {
+        document.getElementById('settingsModal').style.display = 'none';
+    }
+    function selectAvatar(avatarClass) {
+        userAvatar = avatarClass;
+        $('.avatar-option').removeClass('selected');
+        $("." + avatarClass).addClass('selected');
+    }
+    function saveSettings() {
+        userName = $("#userName").val() || 'Usuario';
+        closeSettings();
+        var initialGreeting = `Hola ${userName}, soy tu asistente de consultas y dilemas 👨‍💻. ¿En qué puedo ayudarte? Selecciona una opción: <button class='option-button' onclick="sendMessage('Tengo una consulta')">Tengo una Consulta</button> <button class='option-button' onclick="sendMessage('Tengo un dilema')">Tengo un Dilema</button> <button class='option-button' onclick="sendMessage('Con quienes me puedo contactar')">Con quienes me puedo contactar</button>`;
+        appendMessage('Bot', initialGreeting);
+    }
+    $(document).ready(function() {
+        // Mostrar modal de configuración al cargar la página
+        openSettings();
+        $("#userInput").keypress(function(event) {
+            if (event.which == 13) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    });
+</script>
+</body>
+</html>
