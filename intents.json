@@ -7,7 +7,7 @@
         },
         {
             "tag": "Tengo un dilema",
-            "options": ["ética", "conflicto de interés"],
+            "options": ["Ético", "Conflicto de interés","Conflicto de interés ético"],
             "responses": []
         },
         {
@@ -41,12 +41,18 @@
             "responses": ["Las relaciones personales en el trabajo deben manejarse con profesionalismo..."]
         },
         {
-            "tag": "ética",
+            "tag": "Ético",
             "responses": ["Los dilemas éticos deben ser abordados con...mira el 📺<a href='https://www.youtube.com/watch?v=Ct2rdk_SRZ4' target='_blank'>video de Dilemas Morales</a>"]
         },
         {
-            "tag": "conflicto de interés",
-            "responses": ["Los conflictos de interés deben ser reportados a..."]
+            "tag": "Conflicto de interés",
+            "responses": ["Es la situación que se presenta cuando una persona tiene un interés particular y directo en la regulación, gestión, control o decisión de un asunto a su cargo, o lo tuviere su cónyuge, compañero o compañera permanente, o alguno de sus parientes dentro del cuarto grado de consanguinidad, segundo de afinidad o primero civil, o su socio o socios de hecho o de derecho."],
+            "options": ["Cuarto grado de consanguinidad?", "Segundo de afinidad?","Primero civil?","De hecho?","De derecho?"]
+        },
+        {
+            "tag": "Cuarto grado de consanguinidad?",
+            "responses": ["Los parientes definidos como cuarto grado de consanguinidad son: Padres, hijos, hermanos, abuelos, bisabuelos, nietos, bisnietos, tíos, sobrinos o primos."]
+            
         }
     ]
  }
