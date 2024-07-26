@@ -2,57 +2,199 @@
     "intents": [
         {
             "tag": "Tengo una consulta",
-            "options": ["privacidad", "relaciones laborales"],
-            "responses": []
+            "options": ["Debida diligencia de contraparte con señal de alerta por jurisdicción","Contenido de Cláusulas y/o Formatos de Ética o Cumplimiento","Identificación de PEP"],
+            "responses": ["De acuerdo...intentaré responder tu consulta..."]
         },
         {
             "tag": "Tengo un dilema",
-            "options": ["Ético", "Conflicto de interés","Conflicto de interés ético"],
-            "responses": []
+            "options": ["Posible Conflicto de interés"],
+            "responses": ["Ok...intentaré responder tu dilema..."]
+        },
+        {
+            "tag": "Quiero consultar la normativa",
+            "responses": ["Claro, puedo ayudarte con eso. 📃Por favor, selecciona la normativa de la que necesitas información: <br><br> <ol><li><a href='https://www.ecopetrol.com.co/wps/portal/Home/es/NuestraEmpresa/%C3%89tica%20y%20Transparencia/InformacionRelacionada' target='_blank'>Normativa de Ética y Cumplimiento</a></li><li><a href='https://www.ecopetrol.com.co/wps/portal/Home/es/NuestraEmpresa/%C3%89tica%20y%20Transparencia/C%C3%B3digo%20de%20%C3%89tica%20y%20Conducta' target='_blank'>Código de Ética y Conducta del Grupo Ecopetrol</a></li></ol> "]
+        },
+        {
+            "tag": "Quiero recordar algunas definiciones",
+            "responses": ["Estoy aquí para ayudarte con esto, 👨‍🏫¿Qué definición quieres conocer?"],
+            "options":["Definición1","Definición2","Definición3"]
         },
         {
             "tag": "Con quienes me puedo contactar",
-            "responses": ["Puedes contactarte con 📱 oficina de cumplimiento"]
+            "responses": ["Puedes contactarte con: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
         },
         {
-            "tag": "privacidad",
-            "options": ["protección de datos", "confidencialidad"],
-            "responses": []
+            "comentario":"// Consulta 1",
+            "tag": "Debida diligencia de contraparte con señal de alerta por jurisdicción",
+            "options": ["Jurisdicción Restringida", "Jurisdicción de Alto Riesgo","Jurisdicción de Riesgo Medio","No conozco el Nivel de Riesgo de la Jurisdicción de la contraparte"],
+            "responses": ["Esta dependerá del nivel de riesgo país de la contraparte con la que se hace la diligencia, de acuerdo con esto, la contraparte opera en una:"]
         },
         {
-            "tag": "protección de datos",
-            "responses": ["La protección de datos es importante. Asegúrate de..."]
+            "comentario":"// Consulta 1.1",
+            "tag": "Jurisdicción Restringida",
+            "responses": ["Te informo que de acuerdo con lo establecido en el <b>numeral 1.4.2.2 del Manual para el Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiamiento del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva -SCI-M-002-</b>, <i>No se establecerán relaciones jurídicas o comerciales con entidades que se encuentren ubicadas en jurisdicciones clasificadas como “Restringidas” de acuerdo con el “Reporte periódico de las jurisdicciones restringidas o de mayor riesgo para LAFT/FPADM” </i> elaborado por la Vicepresidencia Corporativa de Cumplimiento. <br><br> Por tanto, en caso de que la contraparte sobre la cual tenga duda opere en una jurisdicción calificada como <b>restringida</b> de acuerdo con el último reporte de riesgo emitido por la Dirección Corporativo de Cumplimiento, te informo que <b>no</b> se podrá entablar relacionamiento comercial, ni adelantar ningún tipo de gestión con dicha contraparte."]
         },
         {
-            "tag": "confidencialidad",
-            "responses": ["La confidencialidad es esencial para..."]
+            "tag": "Jurisdicción de Alto Riesgo",
+            "options": ["La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de Alto Riesgo", "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de Alto Riesgo"],
+            "responses": ["Acerca de tu consulta..."]
         },
         {
-            "tag": "relaciones laborales",
-            "options": ["trabajo con familiares", "relaciones personales"],
-            "responses": []
+            "tag": "La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de alto riesgo",
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
         },
         {
-            "tag": "trabajo con familiares",
-            "responses": ["No se recomienda trabajar con familiares debido a conflictos de interés..."]
+            "tag": "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de alto riesgo",
+            "responses": ["En relación con la señal de alerta identificada, te informo que siempre y cuando la contraparte no presente una señal de alerta adicional a operar en una jurisdicción de alto riesgo, se podrá avanzar en el trámite respectivo, previa observancia de los siguientes lineamientos: <br><br>1. Realizar el proceso de gestión de contrapartes contenido en el <b>Anexo No. 4 del Manual para el Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiamiento del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva de Ecopetrol S.A. -SCI-M-002- </b> (el Manual), incluidas las actividades de debida diligencia intensificada para jurisdicciones de alto riesgo establecidas en el <b>numeral 1.5.6.</b> de dicho Anexo: <br>a) Requerimientos de información a la Contraparte que permitan conocer si cuenta con políticas, programas y lineamientos éticos, anticorrupción, antisoborno, antifraude y para la prevención de riesgos de LA/FT/FPADM, así como el Sistema de Control Interno, matrices de riesgos, controles, monitoreo y efectividad del sistema. <br>b) Hacer una trazabilidad de noticias, con el fin de identificar señales de alerta o factores de riesgos. <br> c) En caso de que se decida entablar una relación comercial con la Contraparte, realizar monitoreo continuo en la relación contractual, incluyendo, pero sin limitarse, al diligenciamiento de formatos de conocimiento del cliente con una periodicidad semestral y en todo caso, superior a las demás contrapartes no incluidas en este numeral.  <br><br><b>EN EL EVENTO DE HALLAR UNA SEÑAL DE ALERTA EN DESARROLLO DEL PROCESO DE DEBIDA DILIGENCIA O DE DEBIDA DILIGENCIA INTENSIFICADA, SERÁ RESPONSABILIDAD DEL ÁREA EFECTUAR LAS CONSULTAS CORRESPONDIENTES.</b> <br><br>2. Ante la eventual celebración de acuerdos, convenios y/o contratos entre la Contraparte y Ecopetrol S.A.: <br>a) Cumplir con las medidas de debida diligencia intensificada a las que se hace referencia en el Manual LA/FT/FPADM y sus anexos tanto en la fase de alistamiento, como antes de la invitación a cualquier método de elección.<br> b) Asegurar que la Contraparte suscriba el <b>Formato</b> de Prevención del Lavado de Activos, Financiación del Terrorismo, Financiamiento a la Proliferación de Armas de Destrucción Masiva <b>-SCI-F-002-</b> y que se incluyan las correspondientes cláusulas de transparencia, ética y cumplimiento que resulten aplicables para la gestión efectiva de los riesgos de LA/FT/FPADM, fraude, soborno o corrupción derivados del relacionamiento entre las partes.<br><br> Es importante destacar que algunas jurisdicciones de alto riesgo también se encuentran en programas de sanciones como OFAC, cuyos programas por países pueden consultarse <a href='https://ofac.treasury.gov/sanctions-programs-and-country-information' target='_blank'>Aquí</a>"]
         },
         {
-            "tag": "relaciones personales",
-            "responses": ["Las relaciones personales en el trabajo deben manejarse con profesionalismo..."]
+            "tag": "Jurisdicción de Riesgo Medio",
+            "options": ["La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de Riesgo Medio", "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de Riesgo Medio"],
+            "responses": ["Acerca de tu consulta..."]
         },
         {
-            "tag": "Ético",
-            "responses": ["Los dilemas éticos deben ser abordados con...mira el 📺<a href='https://www.youtube.com/watch?v=Ct2rdk_SRZ4' target='_blank'>video de Dilemas Morales</a>"]
+            "tag": "La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de Riesgo Medio",
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
         },
         {
-            "tag": "Conflicto de interés",
-            "responses": ["Es la situación que se presenta cuando una persona tiene un interés particular y directo en la regulación, gestión, control o decisión de un asunto a su cargo, o lo tuviere su cónyuge, compañero o compañera permanente, o alguno de sus parientes dentro del cuarto grado de consanguinidad, segundo de afinidad o primero civil, o su socio o socios de hecho o de derecho."],
-            "options": ["Cuarto grado de consanguinidad?", "Segundo de afinidad?","Primero civil?","De hecho?","De derecho?"]
+            "tag": "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de Riesgo Medio",
+            "responses": ["En relación con la señal de alerta identificada, te informo que siempre y cuando la contraparte no presente una señal de alerta adicional a operar en una jurisdicción de riesgo medio, se podrá avanzar en trámite respectivo, previa observancia de los siguientes lineamientos: <br><br>a) Asegurar que la contraparte, sus representantes legales, socios o accionistas, miembros de órganos directivos y beneficiarios finales no estén en listas restrictivas o de control establecidas en el <b>Manual LAFTPADM</b>. <br>b) Debe asegurarse el diligenciamiento de los formatos de prevención <b>LAFTPADM y de Integridad contractual</b>. <br>c) Asegurar que se incluyan las correspondientes cláusulas éticas y de integridad que resulten aplicables para la gestión efectiva de los riesgos de LA/FT/PADM, fraude, soborno o corrupción derivados del relacionamiento entre las partes."]
         },
         {
-            "tag": "Cuarto grado de consanguinidad?",
-            "responses": ["Los parientes definidos como cuarto grado de consanguinidad son: Padres, hijos, hermanos, abuelos, bisabuelos, nietos, bisnietos, tíos, sobrinos o primos."]
+            "tag": "No conozco el Nivel de Riesgo de la Jurisdicción de la contraparte",
+            "responses": ["Aquí está el listado con el nivel de riesgo de la jurisdicción de la contraparte: <a href='/download_excel' target='_blank'>Descargar listado</a>"]
+        },
+        {
+            "comentario":"// Consulta 2",
+            "tag": "Contenido de Cláusulas y/o Formatos de Ética o Cumplimiento",
+            "responses": ["Debido a que en este caso es necesario que un miembro del equipo de la Dirección Corporativa de Cumplimiento efectúe la revisión de tu solicitud, deberás consultar obligatoriamente a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>. <br><br>Recuerda que el término de respuesta de la Línea Ética es de <b>ocho (8) días hábiles</b> y es tu responsabilidad elevar de manera oportuna la solicitud con la información clara, suficiente y completa que sea requerida."]
+        },
+        {
+            "comentario":"// Consulta 3",
+            "tag": "Identificación de PEP",
+            "options": ["Presenta otra señal de alerta, distinta a tener la condición de PEP","NO presenta otra señal de alerta, distinta a tener la condición de PEP"],
+            "responses": ["Acerca de tu consulta...👩‍💻El PEP identificado o la contraparte a la que se encuentra vinculado(a)..."]
+        },
+        {
+            "comentario":"// Consulta 3.1",
+            "tag": "Presenta otra señal de alerta, distinta a tener la condición de PEP",
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+        },
+        {
+            "comentario":"// Consulta 3.2",
+            "tag": "NO presenta otra señal de alerta, distinta a tener la condición de PEP",
+            "options": ["El PEP identificado tiene dicha condición con ocasión de su cargo en la entidad pública o compañía con participación estatal que es contraparte de Ecopetrol S.A.","El PEP identificado o una persona jurídica de la que él es socio, accionista, miembro de junta directiva o representante legal <b>a título personal</b> corresponde a la contraparte de Ecopetrol S.A."],
+            "responses": ["Acerca de esta consulta..."]
+        },
+        {
+            "comentario":"// Consulta 3.2.1",
+            "tag": "El PEP identificado tiene dicha condición con ocasión de su cargo en la entidad pública o compañía con participación estatal que es contraparte de Ecopetrol S.A.",
+            "responses": ["En ese caso, se podrá continuar con el trámite respectivo, siempre y cuando el área interesada en el negocio adelante las siguientes acciones: <ol><br><li>Solicitar a la contraparte que informe las cuentas en el extranjero en las el(los) PEP(s) identificado(s) tenga(n) derecho o poder de firma o de otra índole, con el fin de asegurar el cumplimiento de lo establecido en el artículo 3 del Decreto 830 de 2021.</li><br><li>Realizar el proceso de gestión de contrapartes contenido en el Anexo No. 4 del Manual para el Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiamiento del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva de Ecopetrol S.A. (SCI-M-002), incluidas las actividades de debida diligencia intensificada establecidas en el numeral 1.5.6.<b> EN EL EVENTO DE HALLAR UNA SEÑAL DE ALERTA EN DESARROLLO DEL PROCESO DE DEBIDA DILIGENCIA O DE DEBIDA DILIGENCIA INTENSIFICADA, SERÁ RESPONSABILIDAD DEL ÁREA EFECTUAR LAS CONSULTAS CORRESPONDIENTES A TRÁVÉS DE LA LÍNEA ÉTICA </b></li> <br><li>Ante la eventual celebración de acuerdos, convenios y/o contratos con Ecopetrol S.A.:<br>a. Cumplir con las medidas de debida diligencia intensificada a las que se hace referencia en el Manual referido.<br>b. Asegurar que se incluyan la cláusula de obligaciones de transparencia, ética y cumplimiento de Ecopetrol S.A</li>"]
+        },
+        {
+            "comentario":"// Consulta 3.2.2",
+            "tag": "El PEP identificado o una persona jurídica de la que él es socio, accionista, miembro de junta directiva o representante legal <b>a título personal</b> corresponde a la contraparte de Ecopetrol S.A.",
+            "responses": ["En ese caso, se deberá validar con la Vicepresidencia Corporativa Jurídica (VIJ) si, atendiendo a la normatividad vigente, existe algún riesgo de inhabilidad o incompatibilidad que impida avanzar en el trámite respectivo. En caso que que VIJ considere que es viable, se podrá continuar, siempre y cuando se adelanten las siguientes acciones: <ol><br><li>Solicitar a la contraparte que informe las cuentas en el extranjero en las el(los) PEP(s) identificado(s) tenga(n) derecho o poder de firma o de otra índole, con el fin de asegurar el cumplimiento de lo establecido en el artículo 3 del Decreto 830 de 2021.</li> <br><li>Realizar el proceso de gestión de contrapartes contenido en el Anexo No. 4 del Manual para el Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiamiento del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva de Ecopetrol S.A. (SCI-M-002), incluidas las actividades de debida diligencia intensificada establecidas en el numeral 1.5.6.<b> EN EL EVENTO DE HALLAR UNA SEÑAL DE ALERTA EN DESARROLLO DEL PROCESO DE DEBIDA DILIGENCIA O DE DEBIDA DILIGENCIA INTENSIFICADA, SERÁ RESPONSABILIDAD DEL ÁREA EFECTUAR LAS CONSULTAS CORRESPONDIENTES A TRÁVÉS DE LA LÍNEA ÉTICA </b></li> <br><li>Ante la eventual celebración de acuerdos, convenios y/o contratos con Ecopetrol S.A.:<br>a. Cumplir con las medidas de debida diligencia intensificada a las que se hace referencia en el Manual referido.<br>b. Asegurar que se incluyan la cláusula de obligaciones de transparencia, ética y cumplimiento de Ecopetrol S.A.</li>"]
+        },
+        {
+            "comentario":"// Dilema 1",
+            "tag": "Posible Conflicto de interés",
+            "responses": ["Recuerda que un <b>Conflicto de Interés</b> Es la situación que se presenta cuando una persona tiene un interés particular y directo en la regulación, gestión, control o decisión de un asunto a su cargo, o lo tuviere su cónyuge, compañero o compañera permanente, o alguno de sus parientes dentro del cuarto grado de consanguinidad, segundo de afinidad o primero civil, o su socio o socios de hecho o de derecho."],
+            "options": ["Relación entre trabajador de Ecopetrol S.A. y familiar que es contratista o se encuentra vinculado con contratista", "Relación de parentesco o de noviazgo entre dos trabajadores de Ecopetrol S.A.","Relación entre trabajador de Ecopetrol S.A. y exempleador","Relación entre trabajador de Ecopetrol S.A. y proveedor de Ecopetrol S.A."]
+        },
+        {
+            "comentario":"// Dilema 1.1",
+            "tag": "Relación entre trabajador de Ecopetrol S.A. y familiar que es contratista o se encuentra vinculado con contratista",
+            "responses": ["La persona con la que mantiene el vínculo corresponde a..."],
+            "options":["Uno de mis padres, hijos, hermanos, sobrinos, suegros, cuñados, yernos, nueras, primos directos","Un familiar diferente a los enunciados en la opción anterior (familiares lejanos o sin parentesco reconocido legalmente)"]
             
+        },
+        {
+            "comentario":"// Dilema 1.1.1",
+            "tag": "Uno de mis padres, hijos, hermanos, sobrinos, suegros, cuñados, yernos, nueras, primos directos",
+            "responses": ["De las siguientes preguntas, alguna está relacionada con su caso? <br><br><ol><li>¿Su familiar tiene relacionamiento directo con Ecopetrol S.A.?</li> <br><li>¿En ejercicio de sus funciones usted interactuaría o tendría relacionamiento con su familiar O con la compañía a la que aquél se encuentra vinculado?</li> <br><li>¿En ejecicio de sus funciones usted decidiría o intervendría en asuntos en los que su familiar O la compañía a la que se encuentra vinculado tienen interés, independientemente de que no interactúe o tenga relacionamiento con cualquiera de ellos?</li>"],
+            "options":["Si, es mi caso","No, no es mi caso"]
+            
+        },
+        {
+            "comentario":"// Dilema 1.1.2",
+            "tag": "Un familiar diferente a los enunciados en la opción anterior (familiares lejanos o sin parentesco reconocido legalmente)",
+            "responses":["De las siguientes preguntas, alguna está relacionada con su caso? <br><br><ol><li>¿Su familiar o la compañía a la que aquél se encuentra vinculado interactúa o tiene relacionamiento directo con Ecopetrol S.A.?</li><li>¿En ejercicio de sus funciones usted interactuaría o tendría relacionamiento con su familiar O con la compañía a la que aquél se encuentra vinculado?</li><li>¿En ejecicio de sus funciones usted decidiría o intervendría en asuntos en los que su familiar O la compañía a la que se encuentra vinculado tienen interés, independientemente de que no interactúe o tenga relacionamiento con cualquiera de ellos?</li></ol>"],
+            "options":["Si, es mi caso","No, no es mi caso"]
+            
+        },
+        {
+            "comentario":"// Dilema 1.3",
+            "tag": "Relación de parentesco o de noviazgo entre dos trabajadores de Ecopetrol S.A.",
+            "responses": ["Acerca de tu dilema...¿Te encuentras en cualquiera de las siguientes circunstancias?: <ol><br><li>Tienes relacionamiento y/o interactúas con tu familiar/novio(a) en ejercicio de sus funciones.</li><br><li>Tú o tu familiar/novio(a) se encuentran en condiciones de subordinación, seguimiento o aprobación respecto del otro.</li><br><li>Tu familiar/novio(o) y tú pertenecen a la misma área de la organización.</li><br><li>Tú o tu familiar/novio(a) intervendrían en asuntos en los que el otro tenga interés, independientemente de que no interactúen o que se trate de asuntos ocasionales.</li></ol>"],
+            "options":["Si, me encuentro en alguna de las circunstancias mencionadas","No, no me encuentro en alguna de las circunstancias mencionadas"]
+            
+        },
+        {
+            "comentario":"// Dilema 1.3.1",
+            "tag": "Si, me encuentro en alguna de las circunstancias mencionadas",
+            "responses": ["En este caso, es posible que se presente un riesgo de conflicto de intereses o conflicto ético, por lo que deberás reportar la situación <b>POR ESCRITO</b> ante tu jefe inmediato, con el fin de aquél valore el asunto y determine las medidas para su gestión. La copia de la declaración y de la respuesta emitida por tu jefe deberán ser remitidas al correo electrónico <br><br><b><i>reporteconflictointeres-regalos@ecopetrol.com.co</i> </b> <br><br>Sin embargo, a partir de un enfoque preventivo deberás: <br><br>a. Abstenerte de ejercer, simultáneamente con tu familiar, el rol de planeador, gestor(a) precontractual, funcionario(a) autorizado, funcionario(a) solicitante, funcionario(a) calificador o funcionario(a) de seguimiento contractual respecto de un mismo acuerdo y/o contrato.<br>b. Abstenerte de ejercer cualquier función y/o responsabilidad en las que se demande revisión o aprobación del uno hacia el otro.<br>c. Abstenerte de recibir y dar visto bueno a documentos, informes o entregables que hayan sido elaborados, revisados o gestionados por tu familiar/novio(a).<br>d. Abstenerte de participar, emitir opinión o decidir respecto de asuntos que sean gestionados o se encuentren bajo la responsabilidad de tu familiar/novio(a).<br>e. Consultar a través de la Línea Ética en caso de dudas sobre riesgos de ética y/o cumplimiento.<br>f. Abstenerte de usar y/o invocar tu cargo frente a sus subordinados o cualquier otro trabajador de Ecopetrol S.A., con el objetivo de favorecer a tu familiar/novio(a).<br>g. Guardar la confidencialidad de la información perteneciente a Ecopetrol S.A.<br>h. Abstenerse de intervenir en cualquier asunto en el que su vínculo sentimental pueda afectar el ejercicio independiente, imparcial o ecuánime de tus funciones y reportar la situación ante tu superior a través de los canales dispuestos para ello."]
+                     
+        },
+        {
+            "comentario":"// Dilema 1.3.2",
+            "tag": "No, no me encuentro en alguna de las circunstancias mencionadas",
+            "responses": ["En caso de que no te encuentres en al menos una de las circunstancias anteriores, en principio, no existiría un riesgo de conflicto de intereses o conflicto ético en la situación reportada. <br><br>Sin embargo, si existen circunstancias que no hayan sido consideradas o que podrían afectar, al menos en apariencia, la percepción sobre tu <b>independencia, autonomía y objetividad</b> o la de tu familiar/novio(a), deberás reportar la situación <b>POR ESCRITO</b> ante su jefe inmediato, con el fin de aquél evalúe la situación y establezca las medidas para su gestión. La copia de la declaración y de la respuesta emitida por su superior jerárquico deberán ser remitidas al correo electrónico: <br><br><b><i>reporteconflictointeres-regalos@ecopetrol.com.co</i></b>"]
+                     
+        },
+        {
+            "comentario":"// Dilema 1.4",
+            "tag": "Relación entre trabajador de Ecopetrol S.A. y exempleador",
+            "responses": ["Acerca de este dilema, ¿Cuándo ocurrió tu desvinculación con tu exempleador?"],
+            "options":["Hace menos de un año","Hace más de un año"]
+            
+        },
+        {
+            "comentario":"// Dilema 1.4.1",
+            "tag": "Hace menos de un año",
+            "responses": ["Debido a que ha transcurrido menos de un año desde la desvinculación de tu exempleador, podría generarse en terceros la percepción de una afectación a tu imparcialidad derivada de tal hecho, del conocimiento específico que tienes sobre la contraparte y/o del eventual relacionamiento con tus excompañeros y exsuperiores jerárquicos. <br><br>Teniendo en cuenta lo anterior, en caso de que tu duda se encuentre relacionada con una función específica que involucre a tu exempleador, deberás reportar la situación  <b>POR ESCRITO</b> ante tu jefe inmediato y declararte impedido para intervenir en el asunto. <br>La copia del reporte y da la respuesta emitida por tu superior jerárquico, deberá ser remitida al correo electrónico: <br><br><i>reporteconflictointeres-regalos@ecopetrol.com.co</i>  <br><br>Adicionalmente, te recordamos que la prohibición para relacionarte con tu exempleador no es indefinida y que si en el futuro se presentaran circunstancias que implicaran tu interacción con él, deberás reportarlo ante tu jefe inmediato, con el fin de que sea aquél el que efectúe la valoración correspondiente atendiendo a las circunstancias concretas del caso y, en caso de duda, consultar a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>."]
+            
+            
+        },
+        {
+            "comentario":"// Dilema 1.4.2",
+            "tag": "Hace más de un año",
+            "options":["Mantengo una relación de cercanía o amistad estrecha con excompañeros o tendría que interactuar con exsuperiores jerárquicos en ejercicio de mis funciones","No mantengo una relación de amistad con excompañeros, y tampoco tendría que interactuar con exsuperiores jerárquicos en ejercicio de mis funciones"],
+            "responses": ["Aunque tu desvinculación sucedió hace más de un año..."]
+            
+            
+        },
+        {
+            "comentario":"// Dilema 1.4.2.1",
+            "tag": "Mantengo una relación de cercanía o amistad estrecha con excompañeros o tendría que interactuar con exsuperiores jerárquicos en ejercicio de mis funciones",
+            "responses": ["En este caso, es posible que exista un riesgo de conflicto ético que impida que te relaciones con tu exempleador. <br><br>Por ese motivo, deberás reportar la situación <b>por escrito</b> ante tu superior jerárquico, con el fin de que sea aquél el que efectúe la valoración del asunto. <br><br>La copia del reporte y de la respuesta de tu superior, deberán ser remitidas al correo electrónico: <br><br><b><i>reporteconflictointeres-regalos@ecopetrol.com.co</i></b>"]
+            
+            
+        },
+        {
+            "comentario":"// Dilema 1.4.2.2",
+            "tag": "No mantengo una relación de amistad con excompañeros, y tampoco tendría que interactuar con exsuperiores jerárquicos en ejercicio de mis funciones",
+            "responses": ["En este caso, en principio, no se existiría un riesgo de conflicto ético que impida que te relaciones con tu exempleador. <br><br>Sin embargo, si en ejercicio de tus funciones, se presenta una circunstancia específica que consideres que puede llegar a afectar, incluso en apariencia, el ejercicio imparcial, objetivo, independiente y ecuánime de tus funciones, deberás reportarlo <b>por escrito</b> ante tu superior jerárquico, con el fin de que sea aquél el que efectúe la valoración del asunto. <br><br>La copia del reporte y de la respuesta de tu superior, deberán ser remitidas al correo electrónico: <br><br><b><i>reporteconflictointeres-regalos@ecopetrol.com.co</i></b>  <br><br>Adicionalmente, en caso de que tú o tu jefe tengan dudas, podrán elevar un dilema a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>."]
+            
+            
+        },
+        {
+            "comentario":"// Dilema 1.5",
+            "tag": "Relación entre trabajador de Ecopetrol S.A. y proveedor de Ecopetrol S.A.",
+            "responses": [],
+            "options":[""]
+            
+        },
+        {
+            "tag": "Si, es mi caso",
+            "responses": ["En este caso, debes reportar la situación <b>POR ESCRITO</b> ante el jefe inmediato, con el fin de que aquél, a partir del detalle de sus funciones y con base en la información a su alcance, determine si, en efecto, existe el riesgo identificado y, de ser así, determine, las medidas para su gestión. La copia de la declaración y de la respuesta emitida por su jefe deberán ser remitidas al correo electrónico: <br><br><i>reporteconflictointeres-regalos@ecopetrol.com.co</i> <br><br>En cualquier caso, a partir de un enfoque preventivo, es importante recordar que, en ejercicio de sus funciones deberá: <br><br>a. Abstenerse de ejercer el rol de gestor precontractual, funcionario autorizado, funcionario solicitante, funcionario calificador, funcionario de seguimiento contractual o cualquier otro rol que implique funciones de aprobación, evaluación o seguimiento respecto de acuerdos presentes o futuros en los que su familiar o la compañía a la que se encuentra vinculado tengan un interés directo.<br>b. Abstenerse de ejercer cualquier función y/o responsabilidad que implique interacción o contacto con su familiar,  incluso aunque no existan condiciones de seguimiento o cualquier clase de relación en las que se demande revisión o aprobación de uno hacia a otro.<br>c. Abstenerse de recibir y dar visto bueno a los informes o entregables provenientes de su familiar o de la compañía a la que aquél se encuentre vinculado.<br>d. Abstenerse de asistir a reuniones o comités en los que participe(n) su familiar o la compañía a la que se encuentre vinculado.<br>e. Consultar a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>, cualquier duda y/o inquietud relacionada con el contenido e interpretación del Código de Ética y Conducta y demás normativas en materia de ética y cumplimiento de Ecopetrol S.A.<br>f. Abstenerse de usar y/o invocar su cargo en Ecopetrol para obtener cualquier beneficio privado en provecho propio o de sus familiares.<br>g. Guardar la confidencialidad de la información perteneciente a Ecopetrol S.A. que conozca en ejercicio de sus funciones y, en consecuencia, abstenerse de suministrarla a cualquier tercero no autorizado, incluidos sus familiares.<br>h. Abstenerse de intervenir en asuntos en los que se presenten riesgos de conflictos de intereses o éticos derivados de su relación previa con SoftwareOne o de su vínculo familiar, así como reportar a su respectivo jefe inmediato(a), de acuerdo con lo establecido en el Código de Ética y en el Instructivo para la gestión y prevención de los conflictos de intereses y conflictos éticos <b>-SCI-I-005-</b>. La copia del reporte y la respuesta deberán ser remitidos al correo electrónico: <br><br><i>reporteconflictointeres-regalos@ecopetrol.com.co</i>"]
+                     
+        },
+        {
+            "tag": "No, no es mi caso",
+            "responses": ["En principio, no existiría un riesgo de conflicto de intereses en la situación reportada. Sin embargo, si existen circunstancias que no hayan sido consideradas o que podrían afectar, al menos en apariencia, la percepción sobre su independencia, autonomía y objetividad o sobre el relacionamiento ético y transparente entre Ecopetrol S.A. y el(los) tercero(s) involucrados, deberá reportar la situación <b>POR ESCRITO</b> ante su jefe inmediato, con el fin de que aquél, a partir del detalle de sus funciones y con base en la información a su alcance, determine si en la situación reportada existiría un riesgo de conflicto de intereses y, de ser así, determine, las medidas para su gestión. <br><br>La copia de la declaración y de la respuesta emitida por su superior jerárquico deberán ser remitidas al correo electrónico: <br><br><i>reporteconflictointeres-regalos@ecopetrol.com.co</i> <br><br>Igualmente, si persisten sus dudas sobre el deber de declaración o el riesgo de conflicto de intereses en el caso concreto, también pueden presentar un dilema a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>."]
+                     
         }
+        
     ]
  }
