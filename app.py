@@ -21,12 +21,12 @@ import csv
 app = Flask(__name__)
 
 # ruta del disco persistente
-db_dir='/var/data'
-os.makedirs(db_dir,exist_ok=True)
-db_path=os.path.join(db_dir,'interactions.db')
+# db_dir='/var/data'
+# os.makedirs(db_dir,exist_ok=True)
+# db_path=os.path.join(db_dir,'interactions.db')
 ## Creación de base de datos
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///interactions.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///interactions.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY']='93\+olRdZ}[I4j>0O`e?\Liw'
 
