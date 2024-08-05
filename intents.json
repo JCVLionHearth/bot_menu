@@ -7,7 +7,7 @@
         },
         {
             "tag": "Debida diligencia de Aliados, Socios, Contratistas, Clientes y Proveedores",
-            "options": ["Debida diligencia de contraparte con señal de alerta por jurisdicción","Identificación de PEP","Inclusión en el Registro Nacional de Medidas Correctivas (RNMC)","Inclusión en el Boletín de Deudores Morosos del Estado (BDME)"],
+            "options": ["Señal de alerta asociada a jurisidicción","Identificación de PEP","Inclusión en el Registro Nacional de Medidas Correctivas (RNMC)","Inclusión en el Boletín de Deudores Morosos del Estado (BDME)"],
             "responses": ["De acuerdo...intentaré responder tu consulta..."]
         },
         {
@@ -26,13 +26,13 @@
         },
         {
             "comentario":"// Soborno",
-            "tag": "¿Cuales son nuestras políticas de prevencion del soborno?",
+            "tag": "Quiero conocer sobre el Subsistema de Gestión Antisoborno",
             "responses": ["Nuestra Compañía tiene políticas estrictas para prevenir el soborno. Estas incluyen capacitaciones regulares, mecanismos de denuncia anónima y medidas disciplinarias para asegurar la integridad en todas nuestras operaciones."],
             "options":["¿Qué es el soborno?","¿Cuáles son mis responsabilidades como trabajador para contribuir a la gestión del riesgo de soborno?","¿Dónde puedo reportar un caso de soborno?","¿Qué debería hacer si me enfrento a un situación que constituya o pueda ser percibida como un soborno?","¿Qué consecuencias tiene el soborno?"]
         },
         {
             "comentario":"// Consulta 1",
-            "tag": "Debida diligencia de contraparte con señal de alerta por jurisdicción",
+            "tag": "Señal de alerta asociada a jurisidicción",
             "options": ["Jurisdicción Restringida", "Jurisdicción de Alto Riesgo","Jurisdicción de Riesgo Medio","No conozco el Nivel de Riesgo de la Jurisdicción de la contraparte"],
             "responses": ["Esta dependerá del nivel de riesgo país de la contraparte con la que se hace la diligencia, de acuerdo con esto, la contraparte opera en una:"]
         },
@@ -48,7 +48,7 @@
         },
         {
             "tag": "La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de alto riesgo",
-            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b>"]
         },
         {
             "tag": "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de alto riesgo",
@@ -61,7 +61,7 @@
         },
         {
             "tag": "La contraparte presenta otra señal de alerta distinta a operar en una jurisdicción de Riesgo Medio",
-            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b>"]
         },
         {
             "tag": "La contraparte no presenta señales de alerta diferentes a operar en una jurisdicción de Riesgo Medio",
@@ -85,7 +85,7 @@
         {
             "comentario":"// Consulta 3.1",
             "tag": "Presenta otra señal de alerta, distinta a tener la condición de PEP",
-            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b>"]
         },
         {
             "comentario":"// Consulta 3.2",
@@ -112,7 +112,7 @@
         {
             "comentario":"// Consulta 4.1",
             "tag": "La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Registro Nacional de Medidas Correctivas",
-            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b>"]
         },
         {
             "comentario":"// Consulta 4.2",
@@ -128,7 +128,7 @@
         {
             "comentario":"// Consulta 5.1",
             "tag": "La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Boletín de Deudores del Estado",
-            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b>"]
         },
         {
             "comentario":"// Consulta 5.2",

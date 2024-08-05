@@ -103,7 +103,7 @@ def get_bot_response(user_input, user_name,user_email):
                             "<button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Normativas</button>"
                             "<button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Definiciones</button>"
                             "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>"
-                            "<button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">Prevención del SOBORNO</button>")
+                            "<button class='option-button' onclick=\"sendMessage('Quiero conocer sobre el Subsistema de Gestión Antisoborno')\">Subsistema de Gestión Antisoborno</button>")
         chat_history.append(('Bot', initial_greeting))
         save_interaction(user_name, user_input, user_email)
         #save_interaction(user_name, user_input, initial_greeting)
@@ -164,7 +164,7 @@ def get_initial_greeting(user_name):
                         "<button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Normativas</button>"
                         "<button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Definiciones</button>"
                         "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>"
-                        "<button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">Prevención del SOBORNO</button>")
+                        "<button class='option-button' onclick=\"sendMessage('Quiero conocer sobre el Subsistema de Gestión Antisoborno')\">Subsistema de Gestión Antisoborno</button>")
     chat_history.append(('Bot', initial_greeting))
     return initial_greeting
 
@@ -284,7 +284,7 @@ def download_chat():
 
     doc.build(Story, onFirstPage=header_footer, onLaterPages=header_footer)
     buffer.seek(0)
-    return send_file(buffer, as_attachment=True, download_name="chat_history.pdf")
+    return send_file(buffer, as_attachment=True, download_name="Historial_Ethos.pdf")
 
 
 @login_manager.user_loader
