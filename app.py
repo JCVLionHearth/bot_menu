@@ -2,12 +2,14 @@ from flask import Flask, render_template, request, jsonify, send_file, redirect,
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+# from flask_ldap3_login import LDAP3LoginManager, AuthenticationResponseStatus
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import datetime
 import re
 import unicodedata
 import io
+import os
 
 from io import BytesIO
 from reportlab.lib.pagesizes import letter
@@ -18,8 +20,13 @@ import csv
 
 app = Flask(__name__)
 
+# ruta del disco persistente
+db_dir='/var/data'
+os.makedirs(db_dir,exist_ok=True)
+db_path=os.path.join(db_dir,'interactions.db')
 ## Creación de base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///interactions.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///interactions.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY']='93\+olRdZ}[I4j>0O`e?\Liw'
 
@@ -30,6 +37,7 @@ class Interaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=True)  # Añade el campo de correo
+    # ip_address = db.Column(db.String(50), nullable=True)  # Añade la dirección IP
     user_input = db.Column(db.String(500), nullable=False)
     # response = db.Column(db.String(500), nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
@@ -94,7 +102,8 @@ def get_bot_response(user_input, user_name,user_email):
                             "<button class='option-button' onclick=\"sendMessage('Tengo un dilema')\">Dilema</button>"
                             "<button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Normativas</button>"
                             "<button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Definiciones</button>"
-                            "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>")
+                            "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>"
+                            "<button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">Prevención del SOBORNO</button>")
         chat_history.append(('Bot', initial_greeting))
         save_interaction(user_name, user_input, user_email)
         #save_interaction(user_name, user_input, initial_greeting)
@@ -154,12 +163,13 @@ def get_initial_greeting(user_name):
                         "<button class='option-button' onclick=\"sendMessage('Tengo un dilema')\">Dilemas</button>"
                         "<button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Normativas</button>"
                         "<button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Definiciones</button>"
-                        "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>")
+                        "<button class='option-button' onclick=\"sendMessage('Con quienes me puedo contactar')\">Contactos</button>"
+                        "<button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">Prevención del SOBORNO</button>")
     chat_history.append(('Bot', initial_greeting))
     return initial_greeting
 
 def get_farewell_message():
-    farewell_message = "Fue un gusto servirte!!👍, ¡que tengas un buen día! Si necesitas más ayuda, estaré aquí para asistirte.👨‍💻 <br> Para más información consulta La 💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>"
+    farewell_message = "Fue un gusto servirte!!👍, ¡que tengas un buen día! Si necesitas más ayuda, estaré aquí para asistirte.👨‍💻 <br><br> Para más información consulta La 💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>"
     chat_history.append(('Bot', farewell_message))
     return farewell_message
 
@@ -172,6 +182,7 @@ def get_bot_response_endpoint():
     user_text = request.args.get('msg')
     user_name = request.args.get('user','Unknown')
     user_email = request.args.get('email', '')  # Recibe el correo
+    # ip_address = request.remote_addr
     chat_history.append(('User', user_text))
     return jsonify(get_bot_response(user_text, user_name, user_email))
 
@@ -243,7 +254,8 @@ def download_chat():
     Story.append(Spacer(1, 12))
 
     # Añadir el disclaimer
-    disclaimer_text = "Las respuestas dadas por el bot son orientativas frente a aspectos comúnmente consultados. Para una respuesta con mayor detalle a un caso específico, consulte a través de la línea ética."
+    disclaimer_text = "DISCLAIMER: Las respuestas dadas por el bot son orientativas frente a aspectos comúnmente consultados.\
+    Para una respuesta con mayor detalle a un caso específico, consulte a través de la línea ética."
     disclaimer = Paragraph(disclaimer_text, disclaimer_style)
     Story.append(disclaimer)
     Story.append(Spacer(1, 20))

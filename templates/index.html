@@ -12,13 +12,13 @@
 <body>
 <div class="chat-container shadow-lg">
 <div class="chat-header">
-           Pregúntale a Ethos
+           Ethos te orienta
 </div>
 <div id="chatbox">
 <div id="chatlog"></div>
 <div class="typing-indicator" id="typingIndicator">
-<i class="fas fa-robot"></i>
-<span>Escribiendo...</span>
+    <i class="fas fa-robot"></i>
+    <span>Escribiendo...</span>
 </div>
 </div>
 <input id="userInput" type="text" name="msg" placeholder="Escribe tu mensaje aquí..." autofocus>
@@ -35,11 +35,12 @@
             <h2>Personaliza tu experiencia</h2>
             
             <label for="userName">Nombre:</label>
-            <input type="text" id="userName">
+            <input type="text" id="userName" required>
+            <span id="nameError" class ="error-message" style="color: red;display: none;">El nombre es obligatorio</span>
             <br/>
             <label for="userEmail">Correo:</label>
-            <input type="email" id="userEmail">
-            
+            <input type="email" id="userEmail" required>
+            <span id="emailError" class ="error-message" style="color: red;display: none;">Correo invalido</span>
             <br>
             <label for="userAvatar">Selecciona un avatar:</label>
             <div id="avatarSelection">
@@ -50,13 +51,13 @@
                 <i class="fas fa-user-secret avatar-option" onclick="selectAvatar('fa-user-secret')"></i>
                 <i class="fas fa-mars avatar-option" onclick="selectAvatar('fa-mars')"></i>
                 <i class="fas fa-venus avatar-option" onclick="selectAvatar('fa-venus')"></i>
-                <!-- Añade más íconos de Font Awesome aquí -->
+                <!-- Añadir más íconos de Font Awesome aquí -->
             </div>
-            <div>
+            <!-- <div>
                 <p><i>Las respuestas dadas por el bot son orientativas frente a aspectos comúnmente consultados. 
                     Para una respuesta con mayor detalle a un caso específico, consulte a través de la línea ética.</i></p>
-            </div>
-            <button type="button" class="btn btn-success" onclick="saveSettings()">Guardar</button>
+            </div> -->
+            <button type="button" class="btn btn-success" onclick="validateAndSaveSettings()">Guardar</button>
         </div>
     </div>
 
@@ -68,6 +69,7 @@
     function appendMessage(role, message) {
         var messageClass = role === 'User' ? 'user-message' : 'bot-message';
         var avatarClass = role === 'User' ? userAvatar : 'fa-robot';
+        var animationClass = role === 'Bot' ? 'bounce-in' : '';
         $("#chatlog").append('<div class="' + messageClass + '"><i class="fas ' + avatarClass + '"></i> <span>' + message + '</span></div>');
         $("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
     }
@@ -117,14 +119,56 @@
         <button class='option-button' onclick="sendMessage('Tengo un dilema')">Tengo un Dilema</button> 
         <button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Quiero consultar la normativa</button> 
         <button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Quiero recordar algunas definiciones</button> 
-        <button class='option-button' onclick="sendMessage('Con quienes me puedo contactar')">Con quienes me puedo contactar</button>`;
+        <button class='option-button' onclick="sendMessage('Con quienes me puedo contactar')">Con quienes me puedo contactar</button>
+        <button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">¿Cuáles son nuestras políticas de prevención del SOBORNO?</button>`;
         appendMessage('Bot', initialGreeting);
     }
 
+    function validateAndSaveSettings() {
+    var userName = $("#userName").val().trim();
+    var userEmail = $("#userEmail").val().trim();
+    var emailDomain = "@ecopetrol.com.co"; // Reemplazar con la extensión de correo
+
+    var valid = true;
+
+    if (!userName) {
+        $("#nameError").show();
+        valid = false;
+    } else {
+        $("#nameError").hide();
+    }
+
+    if (!userEmail.endsWith(emailDomain)) {
+        $("#emailError").show();
+        valid = false;
+    } else {
+        $("#emailError").hide();
+    }
+
+    if (valid) {
+        // Guardar el nombre y el correo si son válidos
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('userEmail', userEmail);
+
+        // Mostrar el mensaje de bienvenida
+        var initialGreeting = `Hola ${userName}, soy <b>Ethos</b> tu asistente Virtual de consultas y dilemas 👨‍💻. ¿En qué puedo ayudarte? 
+        <button class='option-button' onclick="sendMessage('Tengo una consulta')">Tengo una Consulta</button> 
+        <button class='option-button' onclick="sendMessage('Tengo un dilema')">Tengo un Dilema</button> 
+        <button class='option-button' onclick=\"sendMessage('Quiero consultar la normativa')\">Quiero consultar la normativa</button> 
+        <button class='option-button' onclick=\"sendMessage('Quiero recordar algunas definiciones')\">Quiero recordar algunas definiciones</button> 
+        <button class='option-button' onclick="sendMessage('Con quienes me puedo contactar')">Con quienes me puedo contactar</button>
+        <button class='option-button' onclick=\"sendMessage('¿Cuales son nuestras políticas de prevencion del soborno?')\">¿Cuáles son nuestras políticas de prevención del SOBORNO?</button>`;
+        appendMessage('Bot', initialGreeting);
+
+        // Cerrar el modal
+        closeSettings();
+    }
+}
 
     $(document).ready(function() {
         // Mostrar modal de configuración al cargar la página
         openSettings();
+
         $("#userInput").keypress(function(event) {
             if (event.which == 13) {
                 event.preventDefault();

@@ -2,26 +2,33 @@
     "intents": [
         {
             "tag": "Tengo una consulta",
-            "options": ["Debida diligencia de contraparte con señal de alerta por jurisdicción","Contenido de Cláusulas y/o Formatos de Ética o Cumplimiento","Identificación de PEP"],
+            "options": ["Debida diligencia de Aliados, Socios, Contratistas, Clientes y Proveedores","Contenido de Cláusulas y/o Formatos de Ética o Cumplimiento"],
             "responses": ["De acuerdo...intentaré responder tu consulta..."]
         },
         {
-            "tag": "Tengo un dilema",
-            "options": ["Posible Conflicto de interés"],
-            "responses": ["Ok...intentaré responder tu dilema..."]
+            "tag": "Debida diligencia de Aliados, Socios, Contratistas, Clientes y Proveedores",
+            "options": ["Debida diligencia de contraparte con señal de alerta por jurisdicción","Identificación de PEP","Inclusión en el Registro Nacional de Medidas Correctivas (RNMC)","Inclusión en el Boletín de Deudores Morosos del Estado (BDME)"],
+            "responses": ["De acuerdo...intentaré responder tu consulta..."]
         },
         {
             "tag": "Quiero consultar la normativa",
             "responses": ["Claro, puedo ayudarte con eso. 📃Por favor, selecciona la normativa de la que necesitas información: <br><br> <ol><li><a href='https://www.ecopetrol.com.co/wps/portal/Home/es/NuestraEmpresa/%C3%89tica%20y%20Transparencia/InformacionRelacionada' target='_blank'>Normativa de Ética y Cumplimiento</a></li><li><a href='https://www.ecopetrol.com.co/wps/portal/Home/es/NuestraEmpresa/%C3%89tica%20y%20Transparencia/C%C3%B3digo%20de%20%C3%89tica%20y%20Conducta' target='_blank'>Código de Ética y Conducta del Grupo Ecopetrol</a></li></ol> "]
         },
         {
+            "comentario":"// Definiciones",
             "tag": "Quiero recordar algunas definiciones",
             "responses": ["Estoy aquí para ayudarte con esto, 👨‍🏫¿Qué definición quieres conocer?"],
-            "options":["Definición1","Definición2","Definición3"]
+            "options":["Beneficiario Final","Conflicto de Intereses","Conflicto Ético","Consulta","Debida Diligencia","Debida Diligencia Intensificada","Denuncia","Dilema","Pago de Facilitación","Riesgos"]
         },
         {
             "tag": "Con quienes me puedo contactar",
             "responses": ["Puedes contactarte con: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+        },
+        {
+            "comentario":"// Soborno",
+            "tag": "¿Cuales son nuestras políticas de prevencion del soborno?",
+            "responses": ["Nuestra Compañía tiene políticas estrictas para prevenir el soborno. Estas incluyen capacitaciones regulares, mecanismos de denuncia anónima y medidas disciplinarias para asegurar la integridad en todas nuestras operaciones."],
+            "options":["¿Qué es el soborno?","¿Cuáles son mis responsabilidades como trabajador para contribuir a la gestión del riesgo de soborno?","¿Dónde puedo reportar un caso de soborno?","¿Qué debería hacer si me enfrento a un situación que constituya o pueda ser percibida como un soborno?","¿Qué consecuencias tiene el soborno?"]
         },
         {
             "comentario":"// Consulta 1",
@@ -97,8 +104,40 @@
             "responses": ["En ese caso, se deberá validar con la Vicepresidencia Corporativa Jurídica (VIJ) si, atendiendo a la normatividad vigente, existe algún riesgo de inhabilidad o incompatibilidad que impida avanzar en el trámite respectivo. En caso que que VIJ considere que es viable, se podrá continuar, siempre y cuando se adelanten las siguientes acciones: <ol><br><li>Solicitar a la contraparte que informe las cuentas en el extranjero en las el(los) PEP(s) identificado(s) tenga(n) derecho o poder de firma o de otra índole, con el fin de asegurar el cumplimiento de lo establecido en el artículo 3 del Decreto 830 de 2021.</li> <br><li>Realizar el proceso de gestión de contrapartes contenido en el Anexo No. 4 del Manual para el Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiamiento del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva de Ecopetrol S.A. (SCI-M-002), incluidas las actividades de debida diligencia intensificada establecidas en el numeral 1.5.6.<b> EN EL EVENTO DE HALLAR UNA SEÑAL DE ALERTA EN DESARROLLO DEL PROCESO DE DEBIDA DILIGENCIA O DE DEBIDA DILIGENCIA INTENSIFICADA, SERÁ RESPONSABILIDAD DEL ÁREA EFECTUAR LAS CONSULTAS CORRESPONDIENTES A TRÁVÉS DE LA LÍNEA ÉTICA </b></li> <br><li>Ante la eventual celebración de acuerdos, convenios y/o contratos con Ecopetrol S.A.:<br>a. Cumplir con las medidas de debida diligencia intensificada a las que se hace referencia en el Manual referido.<br>b. Asegurar que se incluyan la cláusula de obligaciones de transparencia, ética y cumplimiento de Ecopetrol S.A.</li>"]
         },
         {
+            "comentario":"// Consulta 4",
+            "tag": "Inclusión en el Registro Nacional de Medidas Correctivas (RNMC)",
+            "options": ["La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Registro Nacional de Medidas Correctivas","La contraparte o el tercero NO presenta otra señal de alerta, distinta a estar incluido en el Registro Nacional de Medidas Correctivas"],
+            "responses": ["Acerca de tu consulta..."]
+        },
+        {
+            "comentario":"// Consulta 4.1",
+            "tag": "La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Registro Nacional de Medidas Correctivas",
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+        },
+        {
+            "comentario":"// Consulta 4.2",
+            "tag": "La contraparte o el tercero NO presenta otra señal de alerta, distinta a estar incluido en el Registro Nacional de Medidas Correctivas",
+            "responses": ["Te informamos que estar incluido en el <b>Registro Nacional de Medidas Correctivas (RNMC)</b> no representa un riesgo de ética y/o cumplimiento que impida que la contraparte o el tercero relacionado contrate con Ecopetrol S.A. de conformidad con la normatividad vigente. <br><br>Por consiguiente, siempre y cuando, no se hayan identificado señales de alerta adicionales, desde el punto de vista de cumplimiento, se podrá continuar con el proceso o trámite respectivo."]
+        },
+        {
+            "comentario":"// Consulta 5",
+            "tag": "Inclusión en el Boletín de Deudores Morosos del Estado (BDME)",
+            "options": ["La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Boletín de Deudores del Estado","La contraparte o el tercero NO presenta otra señal de alerta, distinta a estar incluido en el Boletín de Deudores Morosos del Estado"],
+            "responses": ["Acerca de tu consulta..."]
+        },
+        {
+            "comentario":"// Consulta 5.1",
+            "tag": "La contraparte o el tercero presenta otra señal de alerta, distinta a estar incluido en el Boletín de Deudores del Estado",
+            "responses": ["En ese caso, te invito a consultar a través de: <br>💻<a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a> <br>📱Línea Internacional <b>018009121013</b>. <br>📱Línea Nacional en Bogotá <b>3103158600</b> <br>📱Extensión <b>43900</b> <br>👥Mentores Éticos a Nivel Nacional <a href='/download_excel_mentores' target='_blank'>ver listado</a>"]
+        },
+        {
+            "comentario":"// Consulta 5.2",
+            "tag": "La contraparte o el tercero NO presenta otra señal de alerta, distinta a estar incluido en el Boletín de Deudores Morosos del Estado",
+            "responses": ["Te informamos que estar incluido en el <b>Boletín de Deudores Morosos del Estado (BDME)</b> no representa un riesgo de ética y/o cumplimiento que impida que la contraparte o el tercero relacionado contrate con Ecopetrol S.A. de conformidad con la normatividad vigente. <br><br>Sin embargo, antes de avanzar en el trámite o proceso respectivo, te recomendamos verificar que la persona o el tercero relacionado no presente registros en los sistemas de antecedentes de la Contraloría General de la República (CGR) y de la Procuraduría General de la Nación (PGN). <br><br>De ser así, deberás elevar una consulta a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>."]
+        },
+        {
             "comentario":"// Dilema 1",
-            "tag": "Posible Conflicto de interés",
+            "tag": "Tengo un dilema",
             "responses": ["Recuerda que un <b>Conflicto de Interés</b> Es la situación que se presenta cuando una persona tiene un interés particular y directo en la regulación, gestión, control o decisión de un asunto a su cargo, o lo tuviere su cónyuge, compañero o compañera permanente, o alguno de sus parientes dentro del cuarto grado de consanguinidad, segundo de afinidad o primero civil, o su socio o socios de hecho o de derecho."],
             "options": ["Relación entre trabajador de Ecopetrol S.A. y familiar que es contratista o se encuentra vinculado con contratista", "Relación de parentesco o de noviazgo entre dos trabajadores de Ecopetrol S.A.","Relación entre trabajador de Ecopetrol S.A. y exempleador","Relación entre trabajador de Ecopetrol S.A. y proveedor de Ecopetrol S.A."]
         },
@@ -194,6 +233,58 @@
             "tag": "No, no es mi caso",
             "responses": ["En principio, no existiría un riesgo de conflicto de intereses en la situación reportada. Sin embargo, si existen circunstancias que no hayan sido consideradas o que podrían afectar, al menos en apariencia, la percepción sobre su independencia, autonomía y objetividad o sobre el relacionamiento ético y transparente entre Ecopetrol S.A. y el(los) tercero(s) involucrados, deberá reportar la situación <b>POR ESCRITO</b> ante su jefe inmediato, con el fin de que aquél, a partir del detalle de sus funciones y con base en la información a su alcance, determine si en la situación reportada existiría un riesgo de conflicto de intereses y, de ser así, determine, las medidas para su gestión. <br><br>La copia de la declaración y de la respuesta emitida por su superior jerárquico deberán ser remitidas al correo electrónico: <br><br><i>reporteconflictointeres-regalos@ecopetrol.com.co</i> <br><br>Igualmente, si persisten sus dudas sobre el deber de declaración o el riesgo de conflicto de intereses en el caso concreto, también pueden presentar un dilema a través de la <a href='https://ecopetrol.sharepoint.com/sites/emasdigital/Paginas/L%C3%ADnea-%C3%A9tica.aspx' target='_blank'>Línea Ética<a>."]
                      
+        },
+        {
+            "comentario":"// Definiciones1",
+            "tag": "Beneficiario Final",
+            "responses": ["Es toda persona natural o jurídica que, sin tener la condición de cliente o proveedor, es la propietaria o destinataria de los recursos o bienes objeto del contrato o se encuentra autorizada o facultada para disponer de los mismos. <br><br>Incluye también a:<br><ol type='i'><li>La(s) persona(s) que ejerce(n) el control efectivo final sobre una persona jurídica u otra estructura jurídica en los términos del artículo 260 y siguientes del Código de Comercio.</li> <li>Persona natural que, actuando individual o conjuntamente, sea titular, directa o indirectamente, del cinco por ciento (5%) o más del capital o los derechos de voto de la persona jurídica, y/o se beneficie en un cinco por ciento (5%) o más de los rendimientos, utilidades o Activos de la persona jurídica.</li> <li>Cuando no se identifique alguna persona natural en los numerales i. y ii., la persona natural que ostente el cargo de representante legal, salvo que exista una persona natural que ostente una mayor autoridad en relación con las funciones de gestión o dirección de la persona jurídica.</li></ol>"]
+            
+        },
+        {
+            "comentario":"// Definiciones2",
+            "tag": "Conflicto de Intereses",
+            "responses": ["Es la situación que se presenta cuando una persona tiene un interés particular y directo en la regulación, gestión, control o decisión de un asunto a su cargo, o lo tuviere su cónyuge, compañero o compañera permanente, o alguno de sus parientes dentro del cuarto grado de consanguinidad, segundo de afinidad o primero civil, o su socio o socios de hecho o de derecho."]
+            
+        },
+        {
+            "comentario":"// Definiciones3",
+            "tag": "Conflicto Ético",
+            "responses": ["Es cualquier actuar o circunstancia que pueda implicar contraposición de intereses o que reste objetividad, equidad, independencia o imparcialidad, en atención a que puede prevalecer el interés privado o la toma de decisiones en beneficio propio o de un tercero, o en detrimento de los intereses de la Empresa."]
+        },
+        {
+            "comentario":"// Definiciones4",
+            "tag": "Consulta",
+            "responses": ["Son requerimientos relacionados con los procedimientos de debida diligencia, asociados a la prevención de actos de fraude, corrupción, soborno, lavado de activos, financiación del terrorismo y violaciones a Ley FCPA. <br><br>A través de estas consultas se revisan posibles señales de alerta respecto de contratistas, proveedores, socios o trabajadores, entre otros, y se emiten recomendaciones para mitigar las señales de alerta detectadas."]
+        },
+        {
+            "comentario":"// Definiciones5",
+            "tag": "Debida Diligencia",
+            "responses": ["Es el conjunto de procesos necesarios para conocer a las contrapartes, evaluar y adoptar una decisión informada sobre su vinculación, con base en un análisis completo de las condiciones que afectan la misma, de tal forma que se reduzca el riesgo para Ecopetrol en la toma de decisiones en el marco de sus operaciones. <br><br>Este término será aplicable a los procedimientos de conocimiento de terceros adelantados por las áreas de la Compañía y permite dar cumplimiento a lo señalado en el <b>artículo 12 de la Ley 2195 de 2022</b>, a aquella norma que la sustituya o reemplace. <br><br>Este proceso consiste en buscar y analizar la información disponible en las fuentes internas y externas, así como la que sea allegada por la misma contraparte, a fin de conocer sus ingresos, actividades, estructura, políticas, representantes, socios, sitio donde se desarrollan los negocios, sistemas de prevención de riesgos aplicables y demás información relevante para la toma de decisiones frente al relacionamiento con ésta para mitigar riesgos que afecten a la empresa."]
+        },
+        {
+            "comentario":"// Definiciones6",
+            "tag": "Debida Diligencia Intensificada",
+            "responses": ["Es el conjunto de procesos adicionales necesarios para evaluar y adoptar una decisión informada sobre la vinculación o el mantenimiento de la relación comercial con personas cuyo perfil aumente el riesgo. <br><br>Dichos procesos serán puestos en marcha cuando existan posibles relaciones comerciales con Personas Públicamente Expuestas o cuya consulta en Listas vinculantes, restrictivas o de control, haya arrojado algún resultado positivo entre otras. <br><br>Así mismo, será puesto en marcha cuando se presente una señal de alerta en el marco de alguna transacción y/o relación comercial."]
+        },
+        {
+            "comentario":"// Definiciones7",
+            "tag": "Denuncia",
+            "responses": ["Es el mecanismo o acción de cualquier persona para dar a conocer, por medio de la línea ética, los hechos o conductas inadecuadas que puedan constituir violación al Código de Ética y Conducta y que requieren ser verificados. <br><br>Las denuncias pueden ser éticas o de cumplimiento, según lo establezca la normativa interna"]
+        },
+        {
+            "comentario":"// Definiciones8",
+            "tag": "Dilema",
+            "responses": ["Son dudas que se pueden suscitar en el actuar de los destinatarios del Código de Ética y Conducta sobre los principios del Código y sus lineamientos en materia de conflictos de interés o éticos, regalos, atenciones u hospitalidades, corrupción, soborno, fraude, lavado de activos, financiación del terrorismo, FCPA, derechos humanos, responsabilidad social, uso de bienes y manejo de información, entre otros, que tienen por objeto recibir una orientación para no incurrir en actos indebidos que falten a la ética de la organización."]
+        },
+        {
+            "comentario":"// Definiciones9",
+            "tag": "Pago de Facilitación",
+            "responses": ["Son pequeños pagos no oficiales e impropios que se hacen para obtener o agilizar el desempeño de una acción de rutina o necesaria a la cual tiene derecho el que realiza el pago. <br><br>Estos pagos son conocidos, en inglés, como speed o grease payment."]
+        },
+        {
+            "comentario":"// Definiciones10",
+            "tag": "Riesgos",
+            "responses": ["Según <b>ISO 31000</b> es el efecto de la incertidumbre sobre los objetivos, es así como, para Ecopetrol, se considera como todo aquello que pueda, en un momento dado, impedir el logro de los objetivos estratégicos, operacionales, de cumplimiento regulatorio y de reporte de información financiera. <br><br>La exitosa implementación de las estrategias no se limita a evitar acontecimientos negativos o inesperados, implica también desaprovechar acontecimientos positivos u oportunidades."]
         }
         
     ]

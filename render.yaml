@@ -1,0 +1,15 @@
+services:
+- type: web
+  name: Asistente_Ethos
+  runtime: python
+  repo: https://github.com/JCVLionHearth/Tickets
+  plan: starter
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  disk:
+    name: disk
+    mountPath: /var/data
+    sizeGB: 2
+  autoDeploy: false
+version: "1"
